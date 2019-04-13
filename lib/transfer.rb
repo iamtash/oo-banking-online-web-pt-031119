@@ -9,8 +9,11 @@ class Transfer
   end
 
   def valid?
-    return true if self.sender.status == "open" && self.receiver.status == "open"
-    false
+    if self.sender.valid? == true && self.receiver.valid? == true
+      true
+    else
+      false
+    end
   end
 
 end
